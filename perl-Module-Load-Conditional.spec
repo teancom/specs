@@ -1,7 +1,7 @@
 %define modulename Module-Load-Conditional
 
 Name: perl-%{modulename}
-Version: 0.54
+Version: 0.58
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable
@@ -12,6 +12,7 @@ BuildRequires: perl >= 0:5.00503
 BuildRequires: perl-Module-CoreList >= 2.22
 BuildRequires: perl-Module-Load >= 0.11
 BuildRequires: perl-Module-Metadata >= 1.000005
+BuildRequires: perl-Params-Check
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch

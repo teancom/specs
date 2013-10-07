@@ -11,7 +11,6 @@ BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
 Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
-BuildArch: noarch
 
 %description
 %{summary}.

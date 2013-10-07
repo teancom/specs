@@ -13,8 +13,8 @@
 
 name:      perl-Class-Load-XS
 summary:   Class-Load-XS - Perl module
-version:   0.03
-release:   1
+version:   0.06
+release:   1%{?_dist}
 vendor:    drolsky@cpan.org
 packager:  Arix International <cpan2rpm@arix.com>
 license:   Artistic
@@ -23,7 +23,8 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: x86_64
 prefix:    %(echo %{_prefix})
-source:    http://search.cpan.org//CPAN/authors/id/D/DR/DROLSKY/Class-Load-XS-0.03.tar.gz
+BuildRequires: perl-Module-Build
+source:    http://search.cpan.org//CPAN/authors/id/D/DR/DROLSKY/Class-Load-XS-%{version}.tar.gz
 
 %description
 None.

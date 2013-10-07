@@ -1,7 +1,7 @@
 %define modulename Try-Tiny
 
 Name: perl-%{modulename}
-Version: 0.12
+Version: 0.18
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

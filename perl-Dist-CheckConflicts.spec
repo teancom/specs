@@ -1,7 +1,7 @@
 %define modulename Dist-CheckConflicts
 
 Name: perl-%{modulename}
-Version: 0.02
+Version: 0.09
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

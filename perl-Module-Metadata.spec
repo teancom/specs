@@ -1,7 +1,7 @@
 %define modulename Module-Metadata
 
 Name: perl-%{modulename}
-Version: 1.000011
+Version: 1.000018
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

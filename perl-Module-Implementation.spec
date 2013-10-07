@@ -1,7 +1,7 @@
 %define modulename Module-Implementation
 
 Name: perl-%{modulename}
-Version: 0.06
+Version: 0.07
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

@@ -1,7 +1,7 @@
 %define modulename Module-Build
 
 Name: perl-%{modulename}
-Version: 0.4003
+Version: 0.4007
 Release: 1%{?_dist}
 Summary:Build, test, and install Perl modules... is what CPAN says, anyways. 
 License: distributable

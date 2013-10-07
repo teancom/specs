@@ -9,6 +9,7 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=Sub-Install
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+#Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
 
@@ -49,5 +50,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Mon Jan 21 2013 David Bishop <david@gnuconsulting.com> 0.926-1
-- Initial Maefsco build. 
+* Wed Oct 02 2013 David Bishop <david@gnuconsulting.com> 0.926-1
+- Initial build. 

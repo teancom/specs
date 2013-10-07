@@ -1,7 +1,7 @@
 %define modulename Parse-CPAN-Meta
 
 Name: perl-%{modulename}
-Version: 1.4402
+Version: 1.4409
 Release: 1%{?_dist}
 Summary:Parse META.yml and META.json CPAN metadata files 
 License: distributable

@@ -1,14 +1,15 @@
 %define modulename File-chmod
 
 Name: perl-%{modulename}
-Version: 0.32
+Version: 0.39
 Release: 1%{?_dist}
-Summary:chmod all the files 
+Summary:Allows for symbolic chmod notation... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=File-chmod
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+#Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
 
@@ -49,5 +50,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Mon Jan 23 2012 David Bishop <david@gnuconsulting.com> 0.32-1
+* Wed Oct 02 2013 David Bishop <david@gnuconsulting.com> 0.39-1
 - Initial build. 

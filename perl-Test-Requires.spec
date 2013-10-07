@@ -1,7 +1,7 @@
 %define modulename Test-Requires
 
 Name: perl-%{modulename}
-Version: 0.06
+Version: 0.07
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable
@@ -20,20 +20,23 @@ BuildArch: noarch
 %setup -q -n %{modulename}-%{version} 
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" perl Makefile.PL INSTALLDIRS=vendor
-make
-
-%check
-make test
+grep -rsl '^#!.*perl' . |
+grep -v '.bak$' |xargs --no-run-if-empty \
+%__perl -MExtUtils::MakeMaker -e 'MY->fixin(@ARGV)'
+%{__perl} Build.PL
+%{__perl} Build
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 %install
 
-rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-[ -x /usr/lib/rpm/brp-compress ] && /usr/lib/rpm/brp-compress
+%{__perl} Build install destdir=%{buildroot}
+
+cmd=/usr/share/spec-helper/compress_files
+[ -x $cmd ] || cmd=/usr/lib/rpm/brp-compress
+[ -x $cmd ] && $cmd
 
 find $RPM_BUILD_ROOT \( -name perllocal.pod -o -name .packlist \) -exec rm -v {} \;
 

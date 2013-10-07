@@ -5,12 +5,13 @@
 
 Summary: Ruby module for collecting simple facts about a host operating system
 Name: facter
-Version: 1.6.5
-Release: 1%{?_dist}
+Version: 1.7.3
+Release: 2%{?_dist}
 License: GPLv2+
 Group: System Environment/Base
 URL: http://reductivelabs.com/projects/facter
 Source0: http://reductivelabs.com/downloads/facter/%{name}-%{version}.tar.gz
+Patch0: ec2.patch
 # http://github.com/reductivelabs/facter/commit/75db918c37a9fef36c829105d1f8a99ff8bcf751
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -20,7 +21,7 @@ Requires: which redhat-lsb
 Requires: ruby(abi) = 1.8
 %endif
 BuildRequires: ruby >= 1.8.1
-BuildArch: noarch
+#BuildArch: noarch
 
 %description
 Ruby module for collecting simple facts about a host Operating
@@ -29,6 +30,7 @@ operating system. Additional facts can be added through simple Ruby scripts
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 
@@ -45,9 +47,14 @@ rm -rf %{buildroot}
 %{_bindir}/facter
 %{ruby_sitelibdir}/facter.rb
 %{ruby_sitelibdir}/facter
-%doc CHANGELOG INSTALL LICENSE 
+%{_mandir}
+%doc LICENSE 
 
 
 %changelog
+* Wed Oct 02 2013 David Bishop <david@gnuconsulting.com> - 1.7.3-2
+- New upstream version
+- Add patch to make ec2 facts work in a VPC
+
 * Fri Feb 03 2012 David Bishop <david@gnuconsulting.com> - 1.6.5-1
 - Initial package for maefsco

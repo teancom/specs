@@ -9,6 +9,10 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=Config-INI
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+BuildRequires: perl-IO >= 1.14
+BuildRequires: perl-IO-String
+BuildRequires: perl-Mixin-Linewise
+Requires: perl-IO >= 1.14
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
@@ -50,5 +54,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Sat Sep 14 2013 David Bishop <david@gnuconsulting.com> 0.020-1
+* Wed Oct 02 2013 David Bishop <david@gnuconsulting.com> 0.020-1
 - Initial build. 

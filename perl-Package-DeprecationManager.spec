@@ -13,7 +13,7 @@
 
 name:      perl-Package-DeprecationManager
 summary:   Package-DeprecationManager - Manage deprecation warnings for your distribution
-version:   0.11
+version:   0.13
 release:   1
 epoch:     2
 vendor:    Dave Rolsky <autarch@urth.org>
@@ -24,7 +24,7 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: noarch
 prefix:    %(echo %{_prefix})
-source:    http://search.cpan.org//CPAN/authors/id/D/DR/DROLSKY/Package-DeprecationManager-0.11.tar.gz
+source:    http://search.cpan.org//CPAN/authors/id/D/DR/DROLSKY/Package-DeprecationManager-%{version}.tar.gz
 
 %description
 None.

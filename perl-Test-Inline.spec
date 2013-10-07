@@ -13,7 +13,7 @@
 
 name:      perl-Test-Inline
 summary:   Test-Inline - Embed your tests in your code, next to what is being tested
-version:   2.212
+version:   2.213
 release:   1
 vendor:    Adam Kennedy <adamk@cpan.org>
 packager:  Arix International <cpan2rpm@arix.com>
@@ -23,7 +23,7 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: noarch
 prefix:    %(echo %{_prefix})
-source:    http://search.cpan.org//CPAN/authors/id/A/AD/ADAMK/Test-Inline-2.212.tar.gz
+source:    http://search.cpan.org//CPAN/authors/id/A/AD/ADAMK/Test-Inline-%{version}.tar.gz
 BuildRequires: perl-Algorithm-Dependency >= 1.02 
 BuildRequires: perl-File-Flat >= 1.00
 BuildRequires: perl-Pod-Tests >= 0.18 

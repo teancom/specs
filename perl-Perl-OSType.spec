@@ -1,7 +1,7 @@
 %define modulename Perl-OSType
 
 Name: perl-%{modulename}
-Version: 1.002
+Version: 1.006
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

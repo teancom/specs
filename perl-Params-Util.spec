@@ -49,5 +49,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Mon Jan 21 2013 David Bishop <david@gnuconsulting.com> 1.07-1
-- Initial Maefsco build. 
+* Wed Oct 02 2013 David Bishop <david@gnuconsulting.com> 1.07-1
+- Initial build. 

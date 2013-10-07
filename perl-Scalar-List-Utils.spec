@@ -1,7 +1,7 @@
 %define modulename Scalar-List-Utils
 
 Name: perl-%{modulename}
-Version: 1.23
+Version: 1.32
 Release: 1%{?_dist}
 Summary:Scalar utilities (dualvar reftype etc)... is what CPAN says, anyways. 
 License: distributable

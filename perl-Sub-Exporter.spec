@@ -1,7 +1,7 @@
 %define modulename Sub-Exporter
 
 Name: perl-%{modulename}
-Version: 0.984
+Version: 0.986
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable
@@ -50,5 +50,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Mon Jan 21 2013 David Bishop <david@gnuconsulting.com> 0.984-1
+* Wed Oct 02 2013 David Bishop <david@gnuconsulting.com> 0.986-1
 - Initial build. 

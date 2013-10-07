@@ -1,7 +1,7 @@
 %define modulename Module-CoreList
 
 Name: perl-%{modulename}
-Version: 2.80
+Version: 2.99
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

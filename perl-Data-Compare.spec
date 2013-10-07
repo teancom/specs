@@ -1,7 +1,7 @@
 %define modulename Data-Compare
 
 Name: perl-%{modulename}
-Version: 1.22
+Version: 1.23
 Release: 1%{?_dist}
 Summary:Compare all the datas 
 License: distributable

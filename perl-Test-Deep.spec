@@ -13,7 +13,7 @@
 
 name:      perl-Test-Deep
 summary:   Test-Deep - Perl module
-version:   0.108
+version:   0.110
 release:   1
 vendor:    Fergal Daly <fergal@esatclear.ie>
 packager:  Arix International <cpan2rpm@arix.com>
@@ -23,7 +23,9 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: noarch
 prefix:    %(echo %{_prefix})
-source:    http://search.cpan.org//CPAN/authors/id/R/RJ/RJBS/Test-Deep-0.108.tar.gz
+BuildRequires: perl-Test-Tester
+BuildRequires: perl-Test-NoWarnings
+source:    http://search.cpan.org//CPAN/authors/id/R/RJ/RJBS/Test-Deep-%{version}.tar.gz
 
 %description
 None.

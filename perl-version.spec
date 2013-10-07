@@ -1,7 +1,7 @@
 %define modulename version
 
 Name: perl-%{modulename}
-Version: 0.96
+Version: 0.9904
 Release: 1%{?_dist}
 Epoch: 3
 Summary:structured version objects... is what CPAN says, anyways. 

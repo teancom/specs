@@ -1,7 +1,7 @@
 %define modulename Test-Tester
 
 Name: perl-%{modulename}
-Version: 0.108
+Version: 0.109
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

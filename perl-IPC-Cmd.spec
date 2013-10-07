@@ -1,7 +1,7 @@
 %define modulename IPC-Cmd
 
 Name: perl-%{modulename}
-Version: 0.78
+Version: 0.84
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

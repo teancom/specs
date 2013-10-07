@@ -1,7 +1,7 @@
 %define modulename Data-OptList
 
 Name: perl-%{modulename}
-Version: 0.107
+Version: 0.108
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

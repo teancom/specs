@@ -1,7 +1,7 @@
 %define modulename CPAN-Meta
 
 Name: perl-%{modulename}
-Version: 2.120351
+Version: 2.132661
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable
@@ -9,6 +9,8 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=CPAN-Meta
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+Requires: perl-Parse-CPAN-Meta >= 1.4409
+AutoReq: no
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch

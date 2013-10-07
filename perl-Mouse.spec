@@ -1,7 +1,7 @@
 %define modulename Mouse
 
 Name: perl-%{modulename}
-Version: 0.97
+Version: 1.12
 Release: 1%{?_dist}
 Summary:Mouse all the Mooses 
 License: distributable
@@ -9,6 +9,7 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=Mouse
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+BuildRequires: perl-Devel-PPPort >= 3.19
 Source0: %{modulename}-%{version}.tar.gz
 Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 %description

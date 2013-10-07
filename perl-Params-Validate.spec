@@ -1,7 +1,7 @@
 %define modulename Params-Validate
 
 Name: perl-%{modulename}
-Version: 1.07
+Version: 1.08
 Release: 1%{?_dist}
 Summary: Validate method/function parameters
 License: distributable

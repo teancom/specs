@@ -13,7 +13,7 @@
 
 name:      perl-Config-Tiny
 summary:   Config-Tiny - Read/Write .ini style files with as little code as possible
-version:   2.14
+version:   2.19
 release:   1
 vendor:    Adam Kennedy <adamk@cpan.org>
 packager:  Arix International <cpan2rpm@arix.com>
@@ -23,7 +23,7 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: noarch
 prefix:    %(echo %{_prefix})
-source:    http://search.cpan.org//CPAN/authors/id/A/AD/ADAMK/Config-Tiny-2.14.tar.gz
+source:    http://search.cpan.org//CPAN/authors/id/A/AD/ADAMK/Config-Tiny-%{version}.tgz
 
 %description
 None.

@@ -1,7 +1,7 @@
 %define modulename ExtUtils-ParseXS
 
 Name: perl-%{modulename}
-Version: 3.18
+Version: 3.22
 Release: 1%{?_dist}
 Summary:Converts Perl XS code into C code... is what CPAN says, anyways. 
 License: distributable

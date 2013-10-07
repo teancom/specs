@@ -1,7 +1,7 @@
 %define modulename CPAN-Meta-YAML
 
 Name: perl-%{modulename}
-Version: 0.008
+Version: 0.010
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

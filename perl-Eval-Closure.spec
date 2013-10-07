@@ -13,7 +13,7 @@
 
 name:      perl-Eval-Closure
 summary:   Eval-Closure - safely and cleanly create closures via string eval
-version:   0.06
+version:   0.11
 release:   1
 vendor:    Jesse Luehrs <doy at tozt dot net>
 packager:  Arix International <cpan2rpm@arix.com>
@@ -23,7 +23,7 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: noarch
 prefix:    %(echo %{_prefix})
-source:    http://search.cpan.org//CPAN/authors/id/D/DO/DOY/Eval-Closure-0.06.tar.gz
+source:    http://search.cpan.org//CPAN/authors/id/D/DO/DOY/Eval-Closure-%{version}.tar.gz
 
 %description
 None.

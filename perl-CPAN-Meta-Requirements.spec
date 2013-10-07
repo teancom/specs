@@ -1,7 +1,7 @@
 %define modulename CPAN-Meta-Requirements
 
 Name: perl-%{modulename}
-Version: 2.123
+Version: 2.125
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable
@@ -50,5 +50,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Sat Sep 14 2013 David Bishop <david@gnuconsulting.com> 2.123-1
+* Tue Oct 01 2013 David Bishop <david@gnuconsulting.com> 2.125-1
 - Initial build. 

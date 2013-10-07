@@ -23,6 +23,7 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: x86_64
 prefix:    %(echo %{_prefix})
+Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 source:    http://search.cpan.org//CPAN/authors/id/F/FL/FLORA/Sub-Name-0.05.tar.gz
 
 %description

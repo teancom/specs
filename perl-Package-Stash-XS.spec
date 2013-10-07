@@ -1,7 +1,7 @@
 %define modulename Package-Stash-XS
 
 Name: perl-%{modulename}
-Version: 0.26
+Version: 0.28
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable

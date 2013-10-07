@@ -25,7 +25,42 @@ buildarch: x86_64
 prefix:    %(echo %{_prefix})
 source:    http://search.cpan.org//CPAN/authors/id/D/DO/DOY/Moose-%{version}.tar.gz
 Provides:  perl(Moose::Error::Util) perl(Moose::Conflicts) perl(inc::MyInline)
-Requires:  perl-Carp >= 1.32
+BuildRequires: perl-Carp >= 1.22
+BuildRequires: perl-Class-Load >= 0.09 
+BuildRequires: perl-Class-Load-XS >= 0.01
+BuildRequires: perl-Data-OptList >= 0.107
+BuildRequires: perl-Dist-CheckConflicts >= 0.02
+BuildRequires: perl-Eval-Closure >= 0.04
+BuildRequires: perl-Package-DeprecationManager >= 0.11
+BuildRequires: perl-Package-Stash >= 0.32
+BuildRequires: perl-Package-Stash-XS >= 0.24
+Requires: perl-Archive-Tar
+Requires: perl-CPAN-Meta-Requirements
+Requires: perl-Class-Load >= 0.07
+Requires: perl-Class-MOP
+Requires: perl-Data-OptList
+Requires: perl-Devel-GlobalDestruction
+Requires: perl-Eval-Closure
+Requires: perl-File-Find-Rule
+Requires: perl-File-Slurp
+Requires: perl-PathTools
+Requires: perl-File-Temp
+Requires: perl-IPC-System-Simple
+Requires: perl-libwww-perl
+Requires: perl-List-MoreUtils
+Requires: perl-Scalar-List-Utils
+Requires: perl-MRO-Compat
+Requires: perl-Package-Stash
+Requires: perl-Params-Util
+Requires: perl-Path-Class
+Requires: perl-Sub-Exporter >= 0.980
+Requires: perl-Sub-Name
+Requires: perl-Test-Inline
+Requires: perl-Try-Tiny
+Requires: perl-Carp >= 1.32
+Requires: perl-Package-DeprecationManager >= 0.07
+Requires: perl-Class-C3
+AutoReq: no
 
 %description
 None.
@@ -120,6 +155,7 @@ find %{buildroot}%{_prefix}             \
 
 %files -f %filelist
 %defattr(-,root,root)
+%exclude %{_mandir}/*
 
 %changelog
 * Wed Nov 23 2011 ec2-user@ip-10-86-133-163

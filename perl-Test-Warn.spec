@@ -13,7 +13,7 @@
 
 name:      perl-Test-Warn
 summary:   Test-Warn - Perl extension to test methods for warnings
-version:   0.23
+version:   0.24
 release:   1
 vendor:    Alexandr Ciornii <alexchorny@gmail.com>
 packager:  Arix International <cpan2rpm@arix.com>
@@ -23,7 +23,7 @@ url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: noarch
 prefix:    %(echo %{_prefix})
-source:    http://search.cpan.org//CPAN/authors/id/C/CH/CHORNY/Test-Warn-0.23.tar.gz
+source:    http://search.cpan.org//CPAN/authors/id/C/CH/CHORNY/Test-Warn-%{version}.tar.gz
 
 %description
 A good style of Perl programming calls for a lot of diverse regression tests.
