@@ -1,16 +1,17 @@
-%define modulename CPAN-Meta-YAML
+%define modulename Math-BigRat
 
 Name: perl-%{modulename}
-Version: 0.010
+Version: 0.2602
 Release: 1%{?_dist}
-Summary:... is what CPAN says, anyways. 
+Summary:Arbitrary big rational numbers 
 License: distributable
 Group: Development/Libraries
-URL: http://search.cpan.org/search?mode=module&query=CPAN-Meta-YAML
+URL: http://search.cpan.org/search?mode=module&query=Math-BigRat
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
-BuildRequires: perl-Test-Simple >= 0.98
-#Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+BuildRequires: perl(Test::More)
+BuildRequires: perl-Math-BigInt >= 1.997
+
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
 
@@ -39,9 +40,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT \( -name perllocal.pod -o -name .packlist \) -exec rm -v {} \;
 
 find $RPM_BUILD_ROOT/usr -type f -print | \
-        sed "s@^$RPM_BUILD_ROOT@@g" | \
-        grep -v perllocal.pod | \
-        grep -v "\.packlist" > %{modulename}-%{version}-filelist
+	sed "s@^$RPM_BUILD_ROOT@@g" | \
+	grep -v perllocal.pod | \
+	grep -v "\.packlist" > %{modulename}-%{version}-filelist
 if [ "$(cat %{modulename}-%{version}-filelist)X" = "X" ] ; then
     echo "ERROR: EMPTY FILE LIST"
     exit -1
@@ -49,7 +50,8 @@ fi
 
 %files -f %{modulename}-%{version}-filelist
 %defattr(-,root,root)
+%exclude %{_mandir}/man3/*
 
 %changelog
-* Mon Oct 7 2013 David Bishop <david@gnuconsulting.com> 0.010
+* Mon Oct 07 2013 David Bishop <david@gnuconsulting.com> 0.2602-1
 - Initial build. 

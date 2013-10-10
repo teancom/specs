@@ -9,6 +9,8 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=Parse-CPAN-Meta
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+BuildRequires: perl-CPAN-Meta-YAML >= 0.008 
+BuildRequires: perl-JSON-PP >= 2.27200 
 Epoch: 1
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch

@@ -128,8 +128,8 @@ rm -fr %{buildroot}
 %doc doc/python.html
 
 %changelog
-* Thu Jul 30 2009 David Bishop <dbishop@synacor.com> 2.7.3-1_synacor
-- Initial Synacor build
+* Thu Oct 10 2013 David Bishop <david@gnuconsulting.com> 
+- New upstream version
 
 * Sun Jan 18 2009 Daniel Veillard <veillard@redhat.com>
 - upstream release 2.7.3 see http://xmlsoft.org/news.html

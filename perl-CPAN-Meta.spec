@@ -9,7 +9,12 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=CPAN-Meta
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+BuildRequires: perl-Parse-CPAN-Meta >= 1.4409
+BuildRequires: perl-CPAN-Meta-YAML >= 0.008
+BuildRequires: perl-JSON-PP >= 2.27200 
 Requires: perl-Parse-CPAN-Meta >= 1.4409
+Requires: perl-CPAN-Meta-YAML >= 0.008
+Requires: perl-JSON-PP >= 2.27200 
 AutoReq: no
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
