@@ -4,9 +4,9 @@ Version: 1.1.11
 Release: 1%{?_dist}
 License: BSD
 Group: System Environment/Libraries
-BuildRequires: gcc-c++, boost-devel >= 1.39, libevent-devel >= 1.4, libuuid-devel, gperf
+BuildRequires: gcc-c++, boost141-devel >= 1.39, libevent-devel >= 1.4, gperf
 URL: http://launchpad.net/gearmand
-Requires: sqlite, libevent >= 1.4, boost-program-options >=  1.39
+Requires: sqlite, libevent >= 1.4
 
 Packager: Brian Aker <brian@tangent.org>
 
@@ -22,7 +22,7 @@ This package provides the client utilities.
 %package server
 Summary: Gearmand Server
 Group: Applications/Databases
-Requires: sqlite, libevent >= 1.4, boost-program-options >=  1.39
+Requires: sqlite, libevent >= 1.4
 
 %description server
 Gearman provides a generic framework to farm out work to other machines, dispatching function calls to machines that are better suited to do work, to do work in parallel, to load balance processing, or to call functions between languages.
@@ -42,7 +42,7 @@ you will need to install %{name}-devel.
 %prep
 %setup -q
 
-%configure --disable-libpq --disable-libtokyocabinet --disable-libdrizzle --disable-libmemcached
+%configure --disable-libpq --disable-libtokyocabinet --disable-libdrizzle --disable-libmemcached --with-boost=/usr/include/boost141/ LDFLAGS="-L/usr/lib64/boost141/" CXX="g++44" CC="gcc44"
 
 
 %build
