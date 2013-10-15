@@ -1,14 +1,15 @@
-%define modulename Capture-Tiny
+%define modulename Gearman-Worker
 
 Name: perl-%{modulename}
-Version: 0.22
+Version: undef
 Release: 1%{?_dist}
-Summary:Capture all the Tinys 
+Summary:... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries
-URL: http://search.cpan.org/search?mode=module&query=Capture-Tiny
+URL: http://search.cpan.org/search?mode=module&query=Gearman-Worker
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+#Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
 
@@ -49,5 +50,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Mon Jan 23 2012 David Bishop <david@gnuconsulting.com> 0.15-1
+* Mon Oct 14 2013 David Bishop <david@gnuconsulting.com> undef-1
 - Initial build. 

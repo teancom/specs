@@ -1,14 +1,17 @@
-%define modulename Capture-Tiny
+%define modulename SOAP-Lite
 
 Name: perl-%{modulename}
-Version: 0.22
+Version: 1.06
 Release: 1%{?_dist}
-Summary:Capture all the Tinys 
+Summary:... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries
-URL: http://search.cpan.org/search?mode=module&query=Capture-Tiny
+URL: http://search.cpan.org/search?mode=module&query=SOAP-Lite
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+BuildRequires: perl-IO-SessionData >= 1.03
+Requires: perl-IO-SessionData >= 1.03
+#Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
 
@@ -49,5 +52,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Mon Jan 23 2012 David Bishop <david@gnuconsulting.com> 0.15-1
+* Mon Oct 14 2013 David Bishop <david@gnuconsulting.com> 1.06-1
 - Initial build. 
