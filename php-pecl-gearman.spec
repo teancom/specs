@@ -15,7 +15,7 @@ Source:     http://pecl.php.net/get/gearman-%{module_version}.tgz
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Provides:   php-pecl(gearman) = %{version}
-Requires:   php-api = %{php_apiver}
+#Requires:   php-api = %{php_apiver}
 BuildRequires:  php-devel >= 5.2
 BuildRequires:  gearmand-devel
 

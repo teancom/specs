@@ -15,7 +15,6 @@ Source:		http://pecl.php.net/get/intl-%{module_version}.tgz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Provides:	php-pecl(intl) = %{version}
-Requires:	php-api = %{php_apiver}
 BuildRequires:	php-devel >= 5.2
 BuildRequires:  libicu-devel
 

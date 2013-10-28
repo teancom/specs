@@ -15,7 +15,7 @@ Source:		http://pecl.php.net/get/memcached-%{module_version}.tgz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Provides:	php-pecl(memcached) = %{version}
-Requires:	php-api = %{php_apiver}
+#Requires:	php-api = %{php_apiver}
 BuildRequires:	php-devel
 
 %description
@@ -30,7 +30,7 @@ This extension allows you to work with memcached through handy OO and procedural
 %build
 cd memcached-%{module_version}
 phpize
-%configure "CC=gcc44" "CXX=g++44"
+%configure "CC=gcc46" "CXX=g++46"
 %{__make} %{?_smp_mflags}
 
 %install

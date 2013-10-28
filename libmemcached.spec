@@ -17,7 +17,7 @@ libMemcached is an open source C/C++ client library and tools for the memcached 
 %setup -q
 
 %build
-%configure --with-memcached --with-mysql --with-gnu-ld "CC=gcc44" "CXX=g++44" 
+%configure --with-memcached --with-mysql --with-gnu-ld "CC=gcc46" "CXX=g++46" 
 make
 
 %install
