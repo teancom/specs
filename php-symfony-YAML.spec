@@ -3,7 +3,7 @@
 %global channel pear.symfony-project.com
 
 Name:           php-symfony-Yaml
-Version:        2.3.5
+Version:        2.3.6
 Release:        1%{?_dist}
 Summary:        The Symfony YAML Component
 

@@ -2,7 +2,7 @@
 %global php_extdir  %(php-config --extension-dir 2>/dev/null || echo "undefined")
 %global php_version %(php-config --version 2>/dev/null || echo 0)
 
-%define module_version 2.1.0
+%define module_version 0.1.0
 
 Name:		php-pecl-memcached
 Summary:	PHP extension for interfacing with memcached via libmemcached library

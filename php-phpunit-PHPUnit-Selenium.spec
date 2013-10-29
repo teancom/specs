@@ -19,7 +19,7 @@ BuildRequires:  php-channel(%{channel})
 
 Requires(post): %{__pear}
 Requires(postun): %{__pear}
-Requires:       php-pear(%{channel}/PHPUnit) >= 3.7.27
+Requires:       php-pear(%{channel}/PHPUnit) >= 3.6.12
 Requires:       php-common >= 5.2.7
 
 Provides:       php-pear(%{channel}/%{pear_name}) = %{version}

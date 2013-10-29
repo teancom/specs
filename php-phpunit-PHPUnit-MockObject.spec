@@ -3,7 +3,7 @@
 %global channel pear.phpunit.de
 
 Name:           php-phpunit-PHPUnit-MockObject
-Version:        1.2.3
+Version:        1.1.1
 Release:        1%{?_dist}
 Summary:        Mock Object library for PHPUnit
 
@@ -20,7 +20,7 @@ BuildRequires:  php-channel(%{channel})
 Requires(post): %{__pear}
 Requires(postun): %{__pear}
 Requires:       php-pear(%{channel}/Text_Template) >= 1.0.0
-Requires:       php-pear(%{channel}/PHPUnit) >= 3.7.27
+Requires:       php-pear(%{channel}/PHPUnit) >= 3.6.12
 
 Provides:       php-pear(%{channel}/%{pear_name}) = %{version}
 

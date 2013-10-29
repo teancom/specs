@@ -3,7 +3,7 @@
 %global channel pear.phpunit.de
 
 Name:           php-phpunit-Text-Template
-Version:        1.1.4
+Version:        1.1.2
 Release:        1%{?_dist}
 Summary:        Simple template engine
 
@@ -11,7 +11,6 @@ Group:          Development/Libraries
 License:        BSD
 URL:            http://pear.phpunit.de/
 Source0:        http://pear.phpunit.de/get/%{pear_name}-%{version}.tgz
-Source1:        http://github.com/sebastianbergmann/php-text-template/raw/master/README.markdown
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
@@ -33,8 +32,6 @@ Simple template engine.
 # Create a "localized" php.ini to avoid build warning
 cp /etc/php.ini .
 echo "date.timezone=UTC" >>php.ini
-
-cp %{SOURCE1} README.markdown
 
 cd %{pear_name}-%{version}
 # package.xml is V2
@@ -76,12 +73,9 @@ fi
 
 %files
 %defattr(-,root,root,-)
-%doc README.markdown
 %{pear_xmldir}/%{name}.xml
+%doc %{pear_phpdir}/doc
 %{pear_phpdir}/Text
-%doc %{pear_phpdir}/doc/Text_Template/ChangeLog.markdown
-%doc %{pear_phpdir}/doc/Text_Template/LICENSE
-%doc %{pear_phpdir}/doc/Text_Template/README.markdown
 
 %changelog
 * Wed Oct 16 2013 David Bishop <david@gnuconsulting.com>

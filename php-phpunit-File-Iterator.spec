@@ -3,7 +3,7 @@
 %define channel pear.phpunit.de
 
 Name:           php-phpunit-File-Iterator
-Version:        1.3.3
+Version:        1.3.2
 Release:        1%{?_dist}
 Summary:        FilterIterator implementation that filters files based on a list of suffixes
 
@@ -72,13 +72,9 @@ fi
 %files
 %defattr(-,root,root,-)
 %{pear_xmldir}/%{name}.xml
-%{pear_phpdir}/File/Iterator/Factory.php
-%{pear_phpdir}/File/Iterator.php
-%{pear_phpdir}/File/Iterator/Autoload.php
-%{pear_phpdir}/File/Iterator/Facade.php
-%doc %{pear_phpdir}/doc/File_Iterator/ChangeLog.markdown
-%doc %{pear_phpdir}/doc/File_Iterator/LICENSE
-%doc %{pear_phpdir}/doc/File_Iterator/README.markdown
+%{pear_phpdir}/File/
+%doc /usr/share/pear/doc/*
+
 
 %changelog
 * Wed Oct 16 2013 David Bishop <david@gnuconsulting.com>

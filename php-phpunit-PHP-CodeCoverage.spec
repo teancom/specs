@@ -3,7 +3,7 @@
 %global channel pear.phpunit.de
 
 Name:           php-phpunit-PHP-CodeCoverage
-Version:        1.2.13
+Version:        1.1.4
 Release:        1%{?_dist}
 Summary:        PHP code coverage information
 
