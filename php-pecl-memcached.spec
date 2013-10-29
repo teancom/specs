@@ -12,11 +12,11 @@ License:	PHP License
 Group:		Development/Languages
 URL:		http://pecl.php.net/package/memcache
 Source:		http://pecl.php.net/get/memcached-%{module_version}.tgz
+Patch0:     fix_for_210.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 Provides:	php-pecl(memcached) = %{version}
-#Requires:	php-api = %{php_apiver}
-BuildRequires:	php-devel
+BuildRequires:	php-devel libmemcached
 
 %description
 Memcached is a caching daemon designed especially for dynamic web applications to decrease database load by
@@ -26,11 +26,14 @@ This extension allows you to work with memcached through handy OO and procedural
 
 %prep
 %setup -c -q
+cd memcached-%{module_version}
+%patch0 -p0
+cd ..
 
 %build
 cd memcached-%{module_version}
 phpize
-%configure "CC=gcc46" "CXX=g++46"
+%configure "CC=gcc46" "CXX=g++46" 
 %{__make} %{?_smp_mflags}
 
 %install
