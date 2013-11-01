@@ -14,7 +14,7 @@
 
 Summary: Ganglia Distributed Monitoring System
 Name: ganglia
-Version: 3.3.7
+Version: 3.6.0
 URL: http://ganglia.info/
 # The Release macro value is set in configure.in, please update it there.
 Release: 1
