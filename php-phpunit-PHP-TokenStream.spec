@@ -3,7 +3,7 @@
 %global channel       pear.phpunit.de
 
 Name:           php-phpunit-PHP-TokenStream
-Version:        1.2.1
+Version:        1.1.4
 Release:        1%{?_dist}
 Summary:        Wrapper around PHP tokenizer extension
 

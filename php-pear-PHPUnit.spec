@@ -1,9 +1,9 @@
 %{!?__pear: %{expand: %%global __pear %{_bindir}/pear}}
-%global pear_name PHPUnit
+%global pear_name phpunit
 %global channel pear.phpunit.de
 
 Name:           php-pear-PHPUnit
-Version:        3.7.27
+Version:        3.6.12
 Release:        1%{?_dist}
 Summary:        Regression testing framework for unit tests
 
@@ -24,21 +24,21 @@ Requires:       php-pear(PEAR) >= 1.9.1
 Requires:       php-channel(%{channel})
 Requires(post): %{__pear}
 Requires(postun): %{__pear}
-Requires:       php-pear(%{channel}/File_Iterator) >= 1.3.1, 
+Requires:       php-pear(%{channel}/File_Iterator) >= 1.2.6, 
 Requires:       php-pear(%{channel}/Text_Template) >= 1.1.1
-Requires:       php-pear(%{channel}/PHP_CodeCoverage) >= 1.2.13
-Requires:       php-pear(%{channel}/PHP_Timer) >= 1.0.5
+Requires:       php-pear(%{channel}/PHP_CodeCoverage) >= 1.1.4
+Requires:       php-pear(%{channel}/PHP_Timer) >= 1.0.2
 Requires:       php-pear(pear.symfony-project.com/Yaml) >= 2.3.5
 # PHPUnit Extensions (yes, with circular dependency on PHPUnit)
 Requires:       php-pear(%{channel}/PHPUnit_MockObject) >= 1.2.3
 Requires:       php-pear(%{channel}/DbUnit) >= 1.2.3
 Requires:       php-pear(%{channel}/PHP_TokenStream) >= 1.2.0
 
-# Optionnal dependencies
+# Optional dependencies
 Requires:       php-pecl-jsonc php-pdo php-soap
 Requires:       php-pecl(Xdebug) >= 2.0.5
 
-Provides:       php-pear(%{channel}/%{pear_name}) = %{version}
+Provides:       php-pear(%{channel}/PHPUnit) = %{version}
 Obsoletes:      php-pear-PHPUnit < %{version}
 Provides:       php-pear-PHPUnit = %{version}-%{release}
 
@@ -52,20 +52,20 @@ for the creation, execution and analysis of Unit Tests.
 
 
 %prep
-%setup -qc
+%setup -qc -n php-pear-PHPUnit-%{version}
 cp %{SOURCE1} README.markdown
 
 # Create a "localized" php.ini to avoid build warning
 cp /etc/php.ini .
 echo "date.timezone=UTC" >>php.ini
 
-cd %{pear_name}-%{version}
+cd phpunit-%{version}
 # package.xml is V2
-mv ../package.xml %{name}.xml
+mv package.xml %{name}.xml
 
 
 %build
-cd %{pear_name}-%{version}
+cd phpunit-%{version}
 # Empty build section, most likely nothing required.
 
 
@@ -77,7 +77,7 @@ cd %{pear_name}-%{version}
 PHPRC=../php.ini %{__pear} install --nodeps --packagingroot $RPM_BUILD_ROOT %{name}.xml
 
 # Move documentation
-mv $RPM_BUILD_ROOT%{pear_docdir}/%{pear_name} ../docdir
+mv $RPM_BUILD_ROOT%{pear_docdir}/PHPUnit ../docdir
 
 # Clean up unnecessary files
 rm -rf $RPM_BUILD_ROOT%{pear_phpdir}/.??*
@@ -110,9 +110,9 @@ fi
 
 %files
 %defattr(-,root,root,-)
-%doc docdir/* README.markdown
+%doc docdir/* 
 %{pear_xmldir}/%{name}.xml
-%{pear_phpdir}/%{pear_name}
+%{pear_phpdir}/PHPUnit
 %{_bindir}/phpunit
 
 

@@ -3,7 +3,7 @@
 %global channel pear.phpunit.de
 
 Name:           php-phpunit-DbUnit
-Version:        1.2.3
+Version:        1.1.2
 Release:        1%{?_dist}
 Summary:        DbUnit port for PHP/PHPUnit
 
@@ -20,7 +20,7 @@ BuildRequires:  php-channel(%{channel})
 Requires(post): %{__pear}
 Requires(postun): %{__pear}
 Requires:       php-common >= 5.2.7
-Requires:       php-pear(%{channel}/PHPUnit) >= 3.7.23
+Requires:       php-pear(%{channel}/PHPUnit) >= 3.6.12
 Requires:       php-pear(pear.symfony-project.com/Yaml) >= 2.3.5
 
 Provides:       php-pear(%{channel}/%{pear_name}) = %{version}
@@ -83,7 +83,7 @@ fi
 %doc docdir/*
 %{pear_xmldir}/%{name}.xml
 %{pear_phpdir}/PHPUnit/Extensions/Database
-%doc %{pear_phpdir}/doc
+#%doc %{pear_phpdir}/doc
 %{_bindir}/dbunit
 
 
