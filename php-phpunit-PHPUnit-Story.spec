@@ -1,41 +1,42 @@
 %{!?__pear: %{expand: %%global __pear %{_bindir}/pear}}
-%global pear_name Yaml
-%global channel pear.symfony-project.com
+%global pear_name PHPUnit_Story
+%global channel pear.phpunit.de
 
-Name:           php-symfony-Yaml
-Version:        2.3.6
+Name:           php-phpunit-PHPUnit-Story
+Version:        1.0.2
 Release:        1%{?_dist}
-Summary:        The Symfony YAML Component
+Summary:        Mock Object library for PHPUnit
 
 Group:          Development/Libraries
-License:        MIT
-URL:            http://components.symfony-project.org/yaml/
-Source0:        http://pear.symfony-project.com/get/%{pear_name}-%{version}.tgz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+License:        BSD
+URL:            http://pear.phpunit.de/
+Source0:        http://pear.phpunit.de/get/%{pear_name}-%{version}.tgz
 
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
+BuildRequires:  php-pear(PEAR) >= 1.9.1
 BuildRequires:  php-channel(%{channel})
 
-#Requires(post): php-channel(%{channel})
-#Requires(postun): php-channel(%{channel})
-#Requires:       php-channel(%{channel})
-Requires:       php-common >= 5.2.4
+Requires(post): %{__pear}
+Requires(postun): %{__pear}
+Requires:       php-pear(%{channel}/Text_Template) >= 1.0.0
+Requires:       php-pear(%{channel}/PHPUnit) >= 3.7.27
 
 Provides:       php-pear(%{channel}/%{pear_name}) = %{version}
-Obsoletes:      php-symfony-YAML
 
 %description
-The Symfony YAML Component.
-
-Symfony YAML is a PHP library that parses YAML strings and converts them to
-PHP arrays. It can also converts PHP arrays to YAML strings. 
+Mock Object library for PHPUnit
 
 
 %prep
 %setup -q -c
-# package.xml is v2
-mv package.xml %{pear_name}-%{version}/%{name}.xml
+# Create a "localized" php.ini to avoid build warning
+cp /etc/php.ini .
+echo "date.timezone=UTC" >>php.ini
+
 cd %{pear_name}-%{version}
+# package.xml is V2
+mv ../package.xml %{name}.xml
 
 
 %build
@@ -44,13 +45,9 @@ cd %{pear_name}-%{version}
 
 
 %install
-rm -rf $RPM_BUILD_ROOT docdir
 cd %{pear_name}-%{version}
-%{__pear} install --nodeps --packagingroot $RPM_BUILD_ROOT %{name}.xml
-
-# Move documentation
-mv $RPM_BUILD_ROOT%{pear_docdir}/%{pear_name} ../docdir
-
+rm -rf $RPM_BUILD_ROOT docdir
+PHPRC=../php.ini %{__pear} install --nodeps --packagingroot $RPM_BUILD_ROOT %{name}.xml
 
 # Clean up unnecessary files
 rm -rf $RPM_BUILD_ROOT%{pear_phpdir}/.??*
@@ -77,9 +74,9 @@ fi
 
 %files
 %defattr(-,root,root,-)
-%doc docdir/*
-%{pear_phpdir}/Symfony/Component
 %{pear_xmldir}/%{name}.xml
+%{pear_phpdir}/PHPUnit/Extensions/Story
+%doc %{pear_phpdir}/doc
 
 %changelog
 * Wed Oct 16 2013 David Bishop <david@gnuconsulting.com>

@@ -1,15 +1,15 @@
 %{!?__pear: %{expand: %%global __pear %{_bindir}/pear}}
-%global pear_name Yaml
+%global pear_name Finder
 %global channel pear.symfony-project.com
 
-Name:           php-symfony-Yaml
+Name:           php-symfony-Finder
 Version:        2.3.6
 Release:        1%{?_dist}
-Summary:        The Symfony YAML Component
+Summary:        The Symfony Finder Component
 
 Group:          Development/Libraries
 License:        MIT
-URL:            http://components.symfony-project.org/yaml/
+URL:            http://components.symfony-project.org/Finder/
 Source0:        http://pear.symfony-project.com/get/%{pear_name}-%{version}.tgz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -22,13 +22,12 @@ BuildRequires:  php-channel(%{channel})
 Requires:       php-common >= 5.2.4
 
 Provides:       php-pear(%{channel}/%{pear_name}) = %{version}
-Obsoletes:      php-symfony-YAML
 
 %description
-The Symfony YAML Component.
+The Symfony Finder Component.
 
-Symfony YAML is a PHP library that parses YAML strings and converts them to
-PHP arrays. It can also converts PHP arrays to YAML strings. 
+Symfony Finder is a PHP library that parses Finder strings and converts them to
+PHP arrays. It can also converts PHP arrays to Finder strings. 
 
 
 %prep

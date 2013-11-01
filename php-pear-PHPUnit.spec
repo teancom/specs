@@ -31,12 +31,11 @@ Requires:       php-pear(%{channel}/PHP_Timer) >= 1.0.5
 Requires:       php-pear(pear.symfony-project.com/Yaml) >= 2.3.5
 # PHPUnit Extensions (yes, with circular dependency on PHPUnit)
 Requires:       php-pear(%{channel}/PHPUnit_MockObject) >= 1.2.3
-Requires:       php-pear(%{channel}/PHPUnit_Selenium) >= 1.3.2
 Requires:       php-pear(%{channel}/DbUnit) >= 1.2.3
 Requires:       php-pear(%{channel}/PHP_TokenStream) >= 1.2.0
 
 # Optionnal dependencies
-Requires:       php-json php-pdo php-soap
+Requires:       php-pecl-jsonc php-pdo php-soap
 Requires:       php-pecl(Xdebug) >= 2.0.5
 
 Provides:       php-pear(%{channel}/%{pear_name}) = %{version}

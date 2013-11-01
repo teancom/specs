@@ -1,15 +1,14 @@
-%define modulename Hash-Util-FieldHash-Compat
+%define modulename Task-Weaken
 
 Name: perl-%{modulename}
-Version: 0.03
+Version: 1.04
 Release: 1%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries
-URL: http://search.cpan.org/search?mode=module&query=Hash-Util-FieldHash-Compat
+URL: http://search.cpan.org/search?mode=module&query=Task-Weaken
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
-BuildRequires: perl-Test-use-ok
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
@@ -51,5 +50,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Wed Oct 02 2013 David Bishop <david@gnuconsulting.com> 0.03-1
+* Thu Oct 31 2013 David Bishop <david@gnuconsulting.com> 1.04-1
 - Initial build. 

@@ -10,6 +10,9 @@ URL: http://search.cpan.org/search?mode=module&query=SOAP-Lite
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
 BuildRequires: perl-IO-SessionData >= 1.03
+BuildRequires: perl-Class-Inspector 
+BuildRequires: perl-Crypt-SSLeay
+BuildRequires: perl-Task-Weaken
 Requires: perl-IO-SessionData >= 1.03
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz

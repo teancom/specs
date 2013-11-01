@@ -42,7 +42,7 @@ AutoReqProv: no
 
 Name:          php-composer
 Version:       %{github_version}
-Release:       0.4%{?github_version_alpha:.%{github_version_alpha}}%{?github_release:.%{github_release}}%{?dist}
+Release:       1%{?_dist}
 Summary:       Dependency Manager for PHP
 
 Group:         Development/Libraries
@@ -65,35 +65,35 @@ Patch0:        php-composer-rpm-no-fileattrs.patch
 BuildArch:     noarch
 
 # need this for test suite
-BuildRequires:  php-phpunit-PHPUnit
+BuildRequires:  php-pear-PHPUnit
 BuildRequires:  php-jsonlint >= %{jsonlint_min_ver}
 BuildRequires:  php-jsonlint <  %{jsonlint_max_ver}
 BuildRequires:  php-JsonSchema >= %{jsonschema_min_ver}
 BuildRequires:  php-JsonSchema <  %{jsonschema_max_ver}
-BuildRequires:  php-pear(pear.symfony.com/Console) >= %{symfony_min_ver}
-BuildRequires:  php-pear(pear.symfony.com/Console) <  %{symfony_max_ver}
-BuildRequires:  php-pear(pear.symfony.com/Finder) >= %{symfony_min_ver}
-BuildRequires:  php-pear(pear.symfony.com/Finder) <  %{symfony_max_ver}
-BuildRequires:  php-pear(pear.symfony.com/Process) >= %{symfony_min_ver}
-BuildRequires:  php-pear(pear.symfony.com/Process) <  %{symfony_max_ver}
+BuildRequires:  php-symfony-Console >= %{symfony_min_ver}
+BuildRequires:  php-symfony-Console <  %{symfony_max_ver}
+BuildRequires:  php-symfony-Finder >= %{symfony_min_ver}
+BuildRequires:  php-symfony-Finder <  %{symfony_max_ver}
+BuildRequires:  php-symfony-Process >= %{symfony_min_ver}
+BuildRequires:  php-symfony-Process <  %{symfony_max_ver}
 
 Requires:      php-common >= %{php_min_ver}
 Requires:      php-jsonlint >= %{jsonlint_min_ver}
 Requires:      php-jsonlint <  %{jsonlint_max_ver}
 Requires:      php-JsonSchema >= %{jsonschema_min_ver}
 Requires:      php-JsonSchema <  %{jsonschema_max_ver}
-Requires:      php-pear(pear.symfony.com/Console) >= %{symfony_min_ver}
-Requires:      php-pear(pear.symfony.com/Console) <  %{symfony_max_ver}
-Requires:      php-pear(pear.symfony.com/Finder) >= %{symfony_min_ver}
-Requires:      php-pear(pear.symfony.com/Finder) <  %{symfony_max_ver}
-Requires:      php-pear(pear.symfony.com/Process) >= %{symfony_min_ver}
-Requires:      php-pear(pear.symfony.com/Process) <  %{symfony_max_ver}
+Requires:      php-symfony-Console >= %{symfony_min_ver}
+Requires:      php-symfony-Console <  %{symfony_max_ver}
+Requires:      php-symfony-Finder >= %{symfony_min_ver}
+Requires:      php-symfony-Finder <  %{symfony_max_ver}
+Requires:      php-symfony-Process >= %{symfony_min_ver}
+Requires:      php-symfony-Process <  %{symfony_max_ver}
 # phpci
 Requires:      php-curl
 Requires:      php-date
 Requires:      php-hash
 Requires:      php-iconv
-Requires:      php-json
+Requires:      php-pecl-jsonc
 Requires:      php-libxml
 Requires:      php-mbstring
 Requires:      php-openssl
@@ -127,7 +127,7 @@ WARNING: This is just a development RPM.  Please submit issues at
 
 
 %prep
-%setup -q -c
+%setup -q -c -n %{github_name}-%{github_version}-%{github_version_alpha}
 
 cp %{SOURCE2} .
 cp %{SOURCE3} .
@@ -139,7 +139,7 @@ cp %{SOURCE7} .
 # Allow compatibility with RPM < 4.9 (no fileattrs)
 %{!?_fileattrsdir:%patch0}
 
-cd %{github_name}-%{github_commit}
+cd %{github_name}-%{github_version}-%{github_version_alpha}
 
 # Use system libraries
 sed -e "s#__DIR__.'/../../vendor/symfony/'#'%pear_phpdir/Symfony/Component/'#" \
@@ -174,7 +174,7 @@ php %{SOURCE1} dump-autoload
 
 
 %install
-pushd %{github_name}-%{github_commit}
+pushd %{github_name}-%{github_version}-%{github_version_alpha}
 
 mkdir -p -m 0755 %{buildroot}%{composer}/%{composer_vendor}/%{composer_project} %{buildroot}%{_bindir}
 cp -rp {bin,res,src,tests,vendor} %{buildroot}%{composer}/%{composer_vendor}/%{composer_project}/
@@ -205,7 +205,7 @@ install -p -m 0755 composer-install %{buildroot}%{_rpmconfigdir}/
 
 %check
 %if %{with_tests}
-    cd %{github_name}-%{github_commit}
+    cd %{github_name}-%{github_version}-%{github_version_alpha}
     phpunit -c tests/complete.phpunit.xml -d date.timezone=UTC
 %else
 : Tests skipped, missing '--with tests' option
@@ -213,10 +213,10 @@ install -p -m 0755 composer-install %{buildroot}%{_rpmconfigdir}/
 
 
 %files
-%doc %{github_name}-%{github_commit}/LICENSE
-%doc %{github_name}-%{github_commit}/*.md
-%doc %{github_name}-%{github_commit}/PORTING_INFO
-%doc %{github_name}-%{github_commit}/doc
+%doc %{github_name}-%{github_version}-%{github_version_alpha}/LICENSE
+%doc %{github_name}-%{github_version}-%{github_version_alpha}/*.md
+%doc %{github_name}-%{github_version}-%{github_version_alpha}/PORTING_INFO
+%doc %{github_name}-%{github_version}-%{github_version_alpha}/doc
 %{composer}/vendor
 %dir %{composer}
 %dir %{composer}/%{composer_vendor}

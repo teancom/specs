@@ -9,6 +9,7 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=Tie-RefHash-Weak
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+BuildRequires: perl-Variable-Magic
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch

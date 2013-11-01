@@ -9,8 +9,8 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=JIRA-Client
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
-BuildRequires: perl-Data-Util
 BuildRequires: perl-SOAP-Lite
+BuildRequires: perl-Data-Util
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
@@ -52,5 +52,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Mon Oct 14 2013 David Bishop <david@gnuconsulting.com> 0.40-1
+* Thu Oct 31 2013 David Bishop <david@gnuconsulting.com> 0.40-1
 - Initial build. 

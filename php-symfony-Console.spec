@@ -1,11 +1,11 @@
 %{!?__pear: %{expand: %%global __pear %{_bindir}/pear}}
-%global pear_name Yaml
+%global pear_name Console
 %global channel pear.symfony-project.com
 
-Name:           php-symfony-Yaml
+Name:           php-symfony-Console
 Version:        2.3.6
 Release:        1%{?_dist}
-Summary:        The Symfony YAML Component
+Summary:        The Symfony Console Component
 
 Group:          Development/Libraries
 License:        MIT
@@ -22,13 +22,12 @@ BuildRequires:  php-channel(%{channel})
 Requires:       php-common >= 5.2.4
 
 Provides:       php-pear(%{channel}/%{pear_name}) = %{version}
-Obsoletes:      php-symfony-YAML
 
 %description
-The Symfony YAML Component.
+The Symfony Console Component.
 
-Symfony YAML is a PHP library that parses YAML strings and converts them to
-PHP arrays. It can also converts PHP arrays to YAML strings. 
+Symfony Console is a PHP library that parses Console strings and converts them to
+PHP arrays. It can also converts PHP arrays to Console strings. 
 
 
 %prep

@@ -3,7 +3,7 @@
 %define channel pear.phpunit.de
 
 Name:           php-phpunit-File-Iterator
-Version:        1.3.3
+Version:        1.3.4
 Release:        1%{?_dist}
 Summary:        FilterIterator implementation that filters files based on a list of suffixes
 

@@ -9,6 +9,7 @@ Group: Development/Libraries
 URL: http://search.cpan.org/search?mode=module&query=Data-Util
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
+BuildRequires: perl-Hash-Util-FieldHash-Compat
 Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 AutoReq: no
 Source0: %{modulename}-%{version}.tar.gz
