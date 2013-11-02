@@ -1,88 +1,60 @@
-%define   _base node
+%global vermajor 0.10
+%global verminor .21
 
-Name:          %{_base}js
-Version:       0.6.10
-Release:       1%{?_dist}
-Summary:       Node.js is a server-side JavaScript environment that uses an asynchronous event-driven model.
-Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
-Group:         Development/Libraries
-License:       MIT License
-URL:           http://nodejs.org
-Source0:       %{_base}-v%{version}.tar.gz
-BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root
-Obsoletes:     npm
-Provides:      npm
+Name:       nodejs
+Version:    %{vermajor}%{?verminor}
+Release:    1%{?_dist}
+Summary:    Evented I/O for V8 JavaScript
+License:    BSD and MIT and ASL 2.0 and GPLv3
+Group:      Development/Languages
+URL:        http://nodejs.org/
+Source0:    http://nodejs.org/dist/node-v%{version}.tar.gz
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires: gcc
-BuildRequires: gcc-c++
-BuildRequires: make
-BuildRequires: openssl-devel
-BuildRequires: libstdc++-devel
+Provides:   nodejs(engine) = %{version}
+Provides:   nodejs(abi) = %{vermajor}
+Provides:	node
+
+BuildRequires:  python >= 2.6.6
+BuildRequires:  openssl-devel
+BuildRequires:  zlib-devel
+
+# V8 sucks at sonames so we're explicit here
+Conflicts:      chromium <= 14
 
 %description
-Node.js is a server-side JavaScript environment that uses an asynchronous event-driven model.
-This allows Node.js to get excellent performance based on the architectures of many Internet applications.
+Node.js is a server-side JavaScript environment that uses an asynchronous
+event-driven model.  Node's goal is to provide an easy way to build scalable
+network programs.
 
 %prep
-%setup -q -n %{_base}-v%{version}
-
+%setup -q -n node-v%{version}
 
 %build
-./configure --prefix=/usr
+CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ;
+CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ;
+FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ;
+
+# nodejs-v0.6.8 FTBFS without this
+LINKFLAGS="-lz"; export LINKFLAGS ;
+
+python ./configure \
+        --prefix=%{_prefix} 
+
 make %{?_smp_mflags}
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+rm -rf %{buildroot}
+make install DESTDIR=%{buildroot}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
-%dir %{_includedir}/node
-%{_includedir}/node/*.h
-%{_includedir}/node/c-ares/*.h
-%{_includedir}/node/uv-private/*.h
-#%{_includedir}/node/ev/*.h
-#%{_prefix}/lib/pkgconfig/nodejs.pc
-%attr(755,root,root) %{_bindir}/node
-%attr(755,root,root) %{_bindir}/node-waf
-%attr(755,root,root) %{_bindir}/npm
-%dir %{_prefix}/lib/node
-%dir %{_prefix}/lib/node/wafadmin
-%dir %{_prefix}/lib/node/wafadmin/Tools
-%{_prefix}/lib/node/wafadmin/*
-%{_prefix}/lib/node_modules/npm
-%{_mandir}/man1/*
-
-%doc
-/usr/share/man/man1/node.1.gz
+/usr/bin/*
+/usr/lib/*
+/usr/share/*
 
 %changelog
-* Sun Feb  5 2012 Pete Fritchman <petef@databits.net>
-- Updated to node.js version 0.6.10
-* Sat Jan  7 2012 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.6.7
-* Fri Dec 16 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.6.6
-* Sun Dec  4 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.6.5
-* Tue Nov 29 2011 Pete Fritchman <petef@databits.net>
-- Updated to node.js version 0.6.3
-* Tue Oct 11 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.5.9
-* Sun Oct  2 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.5.8
-* Sat Sep 18 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.5.7
-* Sat Sep 10 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.5.6
-* Mon Aug 29 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.5.5
-* Fri Aug 12 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.5.4
-* Wed Aug  3 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Updated to node.js version 0.5.3
-* Tue Jul 19 2011 Kazuhisa Hara <kazuhisya@gmail.com>
-- Initial version
+* Sat Nov 02 2013 David Bishop <david@gnuconsulting.com> - 0.10.21-1
+- Initial build
