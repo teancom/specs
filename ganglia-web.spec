@@ -1,8 +1,8 @@
 Summary: Ganglia Web Frontend
 Name: ganglia-web
-Version: 3.5.7
+Version: 3.5.10
 URL: http://ganglia.info
-Release: 1
+Release: 1%{?_dist}
 License: BSD
 Vendor: Ganglia Development Team <ganglia-developers@lists.sourceforge.net>
 Group: System Environment/Base

@@ -17,7 +17,7 @@ Name: ganglia
 Version: 3.6.0
 URL: http://ganglia.info/
 # The Release macro value is set in configure.ac, please update it there.
-Release: 1
+Release: 2%{?_dist}
 License: BSD
 Vendor: Ganglia Development Team <ganglia-developers@lists.sourceforge.net>
 Group: System Environment/Base
