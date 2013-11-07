@@ -1,7 +1,7 @@
 %define modulename YAML-LibYAML
 
 Name: perl-%{modulename}
-Version: 0.38
+Version: 0.41
 Release: 1%{?_dist}
 Summary:Perl YAML Serialization using XS and libyaml  
 License: distributable
@@ -49,5 +49,8 @@ fi
 %defattr(-,root,root)
 
 %changelog
+* Wed Nov 06 2013 David Bishop <david@gnuconsulting.com> 0.41-1
+- New upstream version
+
 * Sun Jan 22 2012 David Bishop <david@gnuconsulting.com> 0.38-1
 - Initial build. 
