@@ -16,8 +16,8 @@
 %endif
 
 # VERSION is subbed out during rake srpm process
-%global realversion 3.3.1
-%global rpmversion 3.3.1
+%global realversion 3.3.2
+%global rpmversion 3.3.2
 
 %global confdir ext/redhat
 
@@ -373,6 +373,9 @@ fi
 rm -rf %{buildroot}
 
 %changelog
+* Sun Nov 17 2013 David Bishop <david@gnuconsulting.com> - 3.3.2-1
+- New upstream release
+
 * Thu Oct 10 2013 David Bishop <david@gnuconsulting.com> - 3.3.1-1
 - New upstream release
 
