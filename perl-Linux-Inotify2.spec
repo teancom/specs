@@ -1,24 +1,19 @@
-%define modulename Crypt-DSA
+%define modulename Linux-Inotify2
 
 Name: perl-%{modulename}
-Version: 1.17
+Version: 1.22
 Release: 1%{?_dist}
-Summary:DSA Sigs and Key Generation 
+Summary:scalable directory and file change notification 
 License: distributable
 Group: Development/Libraries
-URL: http://search.cpan.org/search?mode=module&query=Crypt-DSA
+URL: http://search.cpan.org/search?mode=module&query=Linux-Inotify2
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
-BuildRequires: perl(Digest::SHA1) perl(File::Which) perl(Data::Buffer)
-BuildRequires: perl(Math::BigInt) >= 1.78
-BuildRequires: perl-Math-BigRat >= 0.22
-BuildRequires: perl-bignum >= 0.22
-BuildRequires: perl(Math::Pari)
-Requires: perl(Math::BigInt) >= 1.78
-Requires: perl-Math-BigRat >= 0.22
-Requires: perl-bignum >= 0.22
+BuildRequires: perl(common::sense)
+BuildRequires: perl(Test::Simple)
+Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
-BuildArch: noarch
+Obsoletes: perl-%{modulename}.noarch
 
 %description
 %{summary}.
@@ -30,8 +25,8 @@ BuildArch: noarch
 CFLAGS="$RPM_OPT_FLAGS" perl Makefile.PL INSTALLDIRS=vendor
 make
 
-#%check
-#make test
+%check
+make test
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,5 +52,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Thu Oct 10 2013 David Bishop <david@gnuconsulting.com>
-- New upstream version
+* Fri Dec 27 2013 David Bishop <david@gnuconsulting.com> 1.22-1
+- Initial Argyl build. 
