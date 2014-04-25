@@ -2,7 +2,7 @@
 
 Name: perl-%{modulename}
 Version: 2.03
-Release: 4%{?_dist}
+Release: 5%{?_dist}
 Summary:Perl interface to the MD2 algorithm 
 License: distributable
 Group: Development/Libraries

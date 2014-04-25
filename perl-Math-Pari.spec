@@ -15,7 +15,7 @@ Version:	2.01080605
 # the latest version of GP/PARI the perl module was tested with.
 #%define pariversion %(echo %{version} | %{__perl} -pi -e 's/(\\d+)\\.(\\d\\d)(\\d\\d).*/sprintf("%d.%d.%d",$1,$2,$3)/e')
 %define pariversion 2.1.7
-Release:	3%{?dist}
+Release:	4%{?dist}
 License:	GPL+ or Artistic
 Group:		Development/Libraries
 Url:		http://search.cpan.org/dist/Math-Pari/

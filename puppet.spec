@@ -16,8 +16,8 @@
 %endif
 
 # VERSION is subbed out during rake srpm process
-%global realversion 3.3.2
-%global rpmversion 3.3.2
+%global realversion 3.4.3
+%global rpmversion 3.4.3
 
 %global confdir ext/redhat
 

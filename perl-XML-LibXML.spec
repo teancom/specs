@@ -2,11 +2,12 @@
 
 Summary: XML-LibXML Perl module
 Name: perl-XML-LibXML
-Version: 2.0014
+Version: 2.0115
 Release: 1%{?_dist}
 License: GPL or Artistic
 Group: Development/Libraries
 URL: http://search.cpan.org/dist/XML-LibXML/
+Epoch: 1
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: perl >= 2:5.8.0
 Requires: %(perl -MConfig -le 'if (defined $Config{useithreads}) { print "perl(:WITH_ITHREADS)" } else { print "perl(:WITHOUT_ITHREADS)" }')

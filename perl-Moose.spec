@@ -13,7 +13,7 @@
 
 name:      perl-Moose
 summary:   Moose - A postmodern object system for Perl 5
-version:   2.1005
+version:   2.1204
 release:   1
 vendor:    Moose is maintained by the Moose Cabal, along with the help of many contributors. See L<Moose/CABAL> and L<Moose/CONTRIBUTORS> for details.
 packager:  Arix International <cpan2rpm@arix.com>
@@ -34,6 +34,10 @@ BuildRequires: perl-Eval-Closure >= 0.04
 BuildRequires: perl-Package-DeprecationManager >= 0.11
 BuildRequires: perl-Package-Stash >= 0.32
 BuildRequires: perl-Package-Stash-XS >= 0.24
+BuildRequires: perl-Devel-StackTrace >= 1.30 
+BuildRequires: perl-Module-Runtime >= 0.014 
+Requires: perl-Devel-StackTrace >= 1.30 
+Requires: perl-Module-Runtime >= 0.014 
 Requires: perl-Archive-Tar
 Requires: perl-CPAN-Meta-Requirements
 Requires: perl-Class-Load >= 0.07
@@ -117,7 +121,7 @@ find %{buildroot}%{_prefix}             \
 
 %{__perl} -MFile::Find -le '
     find({ wanted => \&wanted, no_chdir => 1}, "%{buildroot}");
-    print "%doc  Changes.Class-MOP eg bin inc author Changes benchmarks TODO xs doc examples LICENSE";
+    print "%doc  Changes.Class-MOP bin inc author Changes benchmarks TODO xs doc LICENSE";
     for my $x (sort @dirs, @files) {
         push @ret, $x unless indirs($x);
         }

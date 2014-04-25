@@ -11,8 +11,8 @@
 %endif
 
 # VERSION is subbed out during rake srpm process
-%global realversion 1.2.1
-%global rpmversion 1.2.1
+%global realversion 1.3.2
+%global rpmversion 1.3.2
 
 Name:           hiera
 Version:        %{rpmversion}

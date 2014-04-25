@@ -22,6 +22,7 @@ group:     Applications/CPAN
 url:       http://www.cpan.org
 buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 buildarch: noarch
+BuildRequires: perl-Test-Requires
 prefix:    %(echo %{_prefix})
 source:    http://search.cpan.org//CPAN/authors/id/D/DO/DOY/Eval-Closure-%{version}.tar.gz
 

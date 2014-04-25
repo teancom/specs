@@ -1,16 +1,17 @@
-%define modulename YAML-LibYAML
+%define modulename Devel-StackTrace
 
 Name: perl-%{modulename}
-Version: 0.41
-Release: 2%{?_dist}
-Summary:Perl YAML Serialization using XS and libyaml  
+Version: 1.31
+Release: 1%{?_dist}
+Summary:Stacktrace object w/ info form caller()... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries
-URL: http://search.cpan.org/search?mode=module&query=YAML-LibYAML
+URL: http://search.cpan.org/search?mode=module&query=Devel-StackTrace
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
-Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+#Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
+BuildArch: noarch
 
 %description
 %{summary}.
@@ -49,8 +50,5 @@ fi
 %defattr(-,root,root)
 
 %changelog
-* Wed Nov 06 2013 David Bishop <david@gnuconsulting.com> 0.41-1
-- New upstream version
-
-* Sun Jan 22 2012 David Bishop <david@gnuconsulting.com> 0.38-1
+* Wed Apr 09 2014 David Bishop <david@gnuconsulting.com> 1.31-1
 - Initial build. 

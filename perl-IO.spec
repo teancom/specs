@@ -2,7 +2,7 @@
 
 Name: perl-%{modulename}
 Version: 1.25
-Release: 1%{?_dist}
+Release: 2%{?_dist}
 Summary:... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries

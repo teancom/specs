@@ -2,7 +2,7 @@
 
 Name: perl-%{modulename}
 Version: 1.10
-Release: 1%{?_dist}
+Release: 2%{?_dist}
 Summary:provide an interface to TTYs and PTYs... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries

@@ -2,7 +2,7 @@
 
 Name: perl-%{modulename}
 Version: 0.53
-Release: 1%{?_dist}
+Release: 2%{?_dist}
 Summary:Associate magic to variables from Perl... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries

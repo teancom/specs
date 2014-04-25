@@ -2,7 +2,7 @@
 
 Name: perl-%{modulename}
 Version: 0.64
-Release: 1%{?_dist}
+Release: 2%{?_dist}
 Summary:OpenSSL glue that provides LWP https support... is what CPAN says, anyways. 
 License: distributable
 Group: Development/Libraries

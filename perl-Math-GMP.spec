@@ -2,7 +2,7 @@
 
 Name: perl-%{modulename}
 Version: 2.06
-Release: 3%{?_dist}
+Release: 4%{?_dist}
 Summary:High speed arbitrary size integer math 
 License: distributable
 Group: Development/Libraries

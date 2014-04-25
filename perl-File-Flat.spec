@@ -10,6 +10,9 @@ URL: http://search.cpan.org/search?mode=module&query=File-Flat
 BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+BuildRequires: perl-File-Copy-Recursive >= 0.35 
+BuildRequires: perl-Test-ClassAPI >= 1.04 
+BuildRequires: perl-prefork >= 0.02 
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch
 

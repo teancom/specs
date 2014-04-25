@@ -11,6 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-root
 BuildRequires: perl >= 0:5.00503
 BuildRequires: perl-List-MoreUtils >= 0.12
 BuildRequires: perl-Sub-Exporter
+BuildRequires: perl-Test-Fatal
 #Requires:      perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Source0: %{modulename}-%{version}.tar.gz
 BuildArch: noarch

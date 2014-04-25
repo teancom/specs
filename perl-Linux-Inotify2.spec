@@ -2,7 +2,7 @@
 
 Name: perl-%{modulename}
 Version: 1.22
-Release: 1%{?_dist}
+Release: 2%{?_dist}
 Summary:scalable directory and file change notification 
 License: distributable
 Group: Development/Libraries
